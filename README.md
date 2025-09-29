@@ -72,6 +72,7 @@ How to Play
 
 Screenshots attached.
 
+
 Project Structure
   tic-tac-toe-pygame/
   │── main.py          # Entry point

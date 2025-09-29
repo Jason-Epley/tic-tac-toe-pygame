@@ -1,6 +1,5 @@
 # tic-tac-toe-pygame
-Tic-Tac-Toe in Python/Pygame
-Tic-Tac-Toe with Pygame 🎮
+Tic-Tac-Toe in Python/Pygame 🎮
 
 Overview
 

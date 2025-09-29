@@ -71,7 +71,9 @@ How to Play
   Use the replay option to play again.
 
 Screenshots attached.
-
+![image alt](https://github.com/Jason-Epley/tic-tac-toe-pygame/blob/main/tic_tac_toe_pygame_img_3.PNG)
+![image alt](https://github.com/Jason-Epley/tic-tac-toe-pygame/blob/main/tic_tac_toe_pygame_img_2.PNG)
+![image alt](https://github.com/Jason-Epley/tic-tac-toe-pygame/blob/main/tic_tac_toe_pygame_img_1.PNG)
 
 Project Structure
   tic-tac-toe-pygame/

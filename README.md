@@ -153,3 +153,13 @@ Phase 5 – Final Touches
   Record presentation demo.
   
   Push final version to GitHub with tags/releases.
+
+
+Credits
+⦁	"Background Music" bgm.ogg = chill background music #2.wav by ZHRØ -- https://freesound.org/s/703713/ -- License: Attribution 4.0
+⦁	"Menu click" menu_select.wav = Click - Wooden 2 by GameAudio -- https://freesound.org/s/220196/ -- License: Creative Commons 0
+⦁	"Lose sound" lose.wav = Jingle_Lose_01.wav by LittleRobotSoundFactory -- https://freesound.org/s/270334/ -- License: Attribution 4.0
+⦁	"Draw sound" draw.wav = Retro You Lose SFX  by suntemple -- https://freesound.org/s/253174/ -- License: Creative Commons 0
+⦁	"Win sound" win.wav = Electro success sound by Unlistenable -- https://freesound.org/s/391540/ -- License: Attribution NonCommercial 4.0
+⦁	"AI move sound" move_ai.wav = Electro success sound by Unlistenable -- https://freesound.org/s/391540/ -- License: Attribution NonCommercial 4.0
+⦁	"Move sound" move.wav = Click_1.wav by JonnyRuss01 -- https://freesound.org/s/478197/ -- License: Creative Commons 0

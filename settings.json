@@ -1,0 +1,17 @@
+{
+  "effect_volume": 0.9,
+  "music_volume": 0.25,
+  "x_color": [
+    255,
+    105,
+    180
+  ],
+  "o_color": [
+    0,
+    255,
+    120
+  ],
+  "x_wins": 0,
+  "o_wins": 0,
+  "draws": 0
+}

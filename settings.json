@@ -1,17 +1,27 @@
 {
-  "effect_volume": 0.9,
-  "music_volume": 0.25,
+  "effect_volume": 1.0,
+  "music_volume": 1.0,
   "x_color": [
-    255,
-    105,
-    180
+    241,
+    240,
+    173
   ],
   "o_color": [
     0,
-    255,
-    120
+    200,
+    230
   ],
-  "x_wins": 0,
+  "bg_color": [
+    30,
+    78,
+    0
+  ],
+  "text_color": [
+    255,
+    255,
+    255
+  ],
+  "x_wins": 1,
   "o_wins": 0,
   "draws": 0
 }

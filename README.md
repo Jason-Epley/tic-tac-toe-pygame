@@ -155,7 +155,7 @@ Phase 5 – Final Touches
   Push final version to GitHub with tags/releases.
 
 
-Credits
+Music Credits
 ⦁	"Background Music" bgm.ogg = chill background music #2.wav by ZHRØ -- https://freesound.org/s/703713/ -- License: Attribution 4.0
 ⦁	"Menu click" menu_select.wav = Click - Wooden 2 by GameAudio -- https://freesound.org/s/220196/ -- License: Creative Commons 0
 ⦁	"Lose sound" lose.wav = Jingle_Lose_01.wav by LittleRobotSoundFactory -- https://freesound.org/s/270334/ -- License: Attribution 4.0

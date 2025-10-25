@@ -111,13 +111,16 @@ How to Play
 ## Screenshots
 
 ### Main Menu
-![Main Menu](tic_tac_toe_pygame_img_1.PNG)
+![Main Menu](assets/images/tic_tac_toe_pygame_img_1.PNG)
 
 ### Gameplay
-![Gameplay](tic_tac_toe_pygame_img_2.PNG)
+![Gameplay](assets/images/tic_tac_toe_pygame_img_2.PNG)
+
+### Gameplay 2
+![Gameplay_2](assets/images/tic_tac_toe_pygame_img_4.PNG)
 
 ### Settings Screen
-![Settings](tic_tac_toe_pygame_img_3.PNG)
+![Settings](assets/images/tic_tac_toe_pygame_img_3.PNG)
 
 
 Project Structure

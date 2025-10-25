@@ -9,13 +9,23 @@ Overview
   
   Player vs Player and Player vs AI modes
   
-  Two AI difficulty levels (Easy = random, Hard = Minimax)
+  Three AI difficulty levels (Easy = random, Medium = smart/random blend, Hard = optimized Minimax with alpha-beta pruning)
+  
+  Two board sizes: Classic 3x3 and Connect 4-style 4x4
+  
+  Undo move system (Ctrl+Z or button) with move history tracking
+  
+  Smooth piece placement animations with visual effects
+  
+  Game timer and move counter display
+  
+  Five quick-apply color themes plus full RGB customization
   
   Scoreboard and replay system
   
-  Sound effects and simple animations
+  Sound effects with adjustable volume controls
   
-  Player name and symbol customization
+  Player name and symbol customization (10 shape options)
   
   The game is designed as part of my NCLab Python Capstone Project and demonstrates problem solving, design decisions, and original enhancements beyond the basics.
 
@@ -23,15 +33,31 @@ Features
 
   🖥️ GUI Board with colors and symbols
   
-  🤖 AI Opponent: choose Easy or Hard mode
+  🎮 Two Board Sizes: Classic 3x3 or Connect 4-style 4x4
   
-  🎵 Sound Effects for moves and wins
+  🤖 AI Opponent: choose Easy, Medium, or Hard mode
+    - Easy: Random moves
+    - Medium: 60% smart moves, 40% random (balanced challenge)
+    - Hard: Optimized Minimax with alpha-beta pruning and depth limiting
+  
+  ↩️ Undo System: Press Ctrl+Z or click the Undo button to take back your last move
+  
+  ✨ Smooth Animations: Watch pieces scale up smoothly as they're placed
+  
+  ⏱️ Game Timer & Move Counter: Track your game duration and move count
+  
+  🎨 Theming System:
+    - Five quick-apply themes (Classic Dark, Ocean, Forest, Sunset, Neon)
+    - Full RGB customization for X color, O color, and background
+    - 10 different shape options for each player (X, O, Triangle, Square, etc.)
+  
+  🎵 Sound Effects with adjustable volume controls for music and effects
   
   🏆 Scoreboard to track wins, losses, draws
   
   🔄 Replay Option without restarting
   
-  🎨 Custom Symbols/Names for players
+  � Visual feedback: Winning line highlight, pulsing effects, hover states
 
 Installation Requirements
 
@@ -54,21 +80,33 @@ Install pygame:
 
 Run the game:
 
-  python main.py
+  python TicTacToe_Python_Capstone_Project_1.py
 
 How to Play
 
   Launch the game.
   
-  Choose Player vs Player or Player vs AI mode.
+  Choose your game mode from the main menu:
+    - Player vs Player (local multiplayer)
+    - Player vs AI Easy (random moves)
+    - Player vs AI Medium (balanced difficulty)
+    - Player vs AI Hard (challenging minimax AI)
+    - Scores (view win/loss/draw statistics)
+    - Settings (customize colors, sounds, board size, shapes)
   
-  If AI mode, select Easy or Hard.
+  In Settings, you can:
+    - Toggle between Classic 3x3 and Connect 4-style 4x4 boards
+    - Apply quick themes or customize RGB colors
+    - Adjust sound effects and music volume
+    - Choose player shapes (X, O, Triangle, Square, Plus, Diamond, Star, Heart, Pentagon, Hexagon)
   
-  Click an empty square to make your move.
+  During gameplay:
+    - Click an empty square to make your move
+    - Press Ctrl+Z or click the Undo button to take back your last move
+    - Watch the timer and move counter in the top corners
+    - First to 3 in a row (or 4 in a row on 4x4 board) wins
   
-  First to 3 in a row (horizontal, vertical, or diagonal) wins.
-  
-  Use the replay option to play again.
+  After a game ends, you can play again or return to the main menu.
 
 Screenshots attached.
 ![image alt](https://github.com/Jason-Epley/tic-tac-toe-pygame/blob/main/tic_tac_toe_pygame_img_3.PNG)
@@ -77,18 +115,35 @@ Screenshots attached.
 
 Project Structure
   tic-tac-toe-pygame/
-  │── main.py          # Entry point
-  │── game.py          # Core game logic
-  │── ai.py            # AI logic (random + minimax)
-  │── ui.py            # Pygame rendering and input
-  │── assets/          # Images, sounds, fonts
-  │── README.md        # Documentation
+  │── TicTacToe_Python_Capstone_Project_1.py    # Main game file (all-in-one implementation)
+  │── TicTacToe_Python_Capstone_Project_1.spec  # PyInstaller build specification
+  │── game_utils.py                              # Utility functions (display init, etc.)
+  │── build.ps1                                  # PowerShell build script for packaging
+  │── requirements.txt                           # Python dependencies
+  │── settings.json                              # Saved game settings
+  │── assets/
+  │   └── sounds/                               # Audio files (BGM, SFX)
+  │── tests/                                    # Test files
+  │── tools/                                    # Diagnostic tools
+  │── README.md                                 # Documentation
 
-Future Improvements
+Key Implemented Features
 
-  Support for larger board sizes (4x4, 5x5)
+  ✅ Support for 3x3 and 4x4 board sizes
   
-  Theming system (dark/light mode)
+  ✅ Theming system with 5 pre-made themes and RGB customization
+  
+  ✅ Three AI difficulty levels with optimized algorithms
+  
+  ✅ Undo move system with visual feedback
+  
+  ✅ Smooth animations and visual effects
+  
+  ✅ Game timer and statistics tracking
+  
+  ✅ Comprehensive settings persistence
+  
+  ✅ 10 player shape options
   
   Credits
   
@@ -128,21 +183,27 @@ Phase 2 – Polish Base Game
 
 Phase 3 – AI Opponent
 
-  Implement Easy AI (random move).
+  ✅ Implement Easy AI (random move).
   
-  Implement Hard AI (Minimax algorithm for unbeatable AI).
+  ✅ Implement Medium AI (60% smart, 40% random for balanced challenge).
   
-  Add option in menu to pick Easy/Hard AI.
+  ✅ Implement Hard AI (Minimax algorithm with alpha-beta pruning and depth limiting).
+  
+  ✅ Add option in menu to pick Easy/Medium/Hard AI.
 
 Phase 4 – User Experience Enhancements
 
-  Add colors/graphics customization (different X/O styles, themes).
+  ✅ Add colors/graphics customization (10 shape options, 5 themes, full RGB control).
   
-  Highlight the winning line when someone wins.
+  ✅ Highlight the winning line when someone wins with pulsing animation.
   
-  Add sound effects (move sound, win sound).
+  ✅ Add sound effects (move, AI move, win, lose, draw, menu sounds) with volume controls.
   
-  Smooth animations (e.g., fade-in moves, line draw).
+  ✅ Smooth animations (scale-up piece placement, visual effects).
+  
+  ✅ Add undo move system (Ctrl+Z and button).
+  
+  ✅ Add game timer and move counter display.
 
 Phase 5 – Final Touches
 
@@ -163,3 +224,75 @@ Music Credits
 ⦁	"Win sound" win.wav = Electro success sound by Unlistenable -- https://freesound.org/s/391540/ -- License: Attribution NonCommercial 4.0
 ⦁	"AI move sound" move_ai.wav = Electro success sound by Unlistenable -- https://freesound.org/s/391540/ -- License: Attribution NonCommercial 4.0
 ⦁	"Move sound" move.wav = Click_1.wav by JonnyRuss01 -- https://freesound.org/s/478197/ -- License: Creative Commons 0
+
+Build & Packaging
+------------------
+
+If you want to distribute the game to other users (Windows EXE), PyInstaller is the simplest option. The repository includes a spec file `TicTacToe_Python_Capstone_Project_1.spec` that bundles the `assets/` folder so sounds and other resources are available at runtime.
+
+Recommended steps (Windows PowerShell):
+
+1. Install PyInstaller:
+
+```powershell
+pip install pyinstaller
+```
+
+2. Build a one-folder distribution (recommended for apps with many assets):
+
+```powershell
+# From the repo root
+pyinstaller --noconfirm --onedir --add-data "assets;assets" TicTacToe_Python_Capstone_Project_1.py
+```
+
+This creates `dist\TicTacToe_Python_Capstone_Project_1\` containing the executable and an `assets/` directory. Users can run the EXE directly from that folder.
+
+3. Or build using the provided spec file (it already includes the assets tree):
+
+```powershell
+pyinstaller TicTacToe_Python_Capstone_Project_1.spec
+```
+
+Notes & tips
+- The app includes a `resource_path()` helper so asset lookup works when running from source, `--onedir` builds, or `--onefile` bundles (PyInstaller extracts files to a temp folder). If you change asset layout, update `resource_path` usage accordingly.
+- For best portability, ship `bgm.ogg` (OGG is broadly supported). MP3 support depends on SDL_mixer build on some platforms.
+- Single-file builds (`--onefile`) are possible but will extract assets to a temp folder at runtime and can increase startup time. Use `--onedir` for simpler distribution.
+- To produce an installer (optional), package the `dist\TicTacToe_Python_Capstone_Project_1` folder with an installer builder (Inno Setup, NSIS) or zip it for users.
+
+If you'd like, I can add a small `build.ps1` script that runs the pyinstaller command and packages the output into a zip for distribution.
+
+## Verification
+
+After building, verify the distribution on a clean machine or VM to ensure assets (sounds) and music codecs load correctly.
+
+Minimal manual test checklist:
+
+- Unzip or copy the contents of the build folder (from `dist/`) to the test machine.
+- Run the executable inside the folder (Windows: the .exe in the folder). The game should open a window.
+- Go to Settings and confirm:
+  - The RGB sliders are visible and draggable.
+  - "Sound Effects Volume" and "Music Volume" sliders are present and audible (if your machine has audio output).
+  - If music doesn't start, the top-right of Settings will show a small notice indicating bgm is missing or unavailable.
+- Start a game and ensure move sounds and win/draw/lose sounds play when appropriate.
+
+If you prefer an automated helper, run the included PowerShell helper from the repo root to build & ZIP the output:
+
+  .\build.ps1
+
+This will build using the spec (if present) or run a one-folder build and create a timestamped zip file you can transfer to a test VM.
+
+Headless CI / running tests in CI
+--------------------------------
+
+When running automated tests or importing the module in headless CI runners, Pygame may fail to create a display/renderer. To run Pygame in headless mode set the SDL_VIDEODRIVER environment variable to "dummy" before importing or running Pygame code. Example (GitHub Actions):
+
+```yaml
+- name: Run tests (headless)
+  env:
+    SDL_VIDEODRIVER: dummy
+  run: |
+    python -m pip install -r requirements.txt
+    python -m pytest -q
+```
+
+This tells SDL to use a dummy video driver so Pygame won't attempt to open an actual window. Use this in CI steps that only need to import the game or run unit tests that don't require a visible UI.

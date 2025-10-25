@@ -2,26 +2,29 @@
   "effect_volume": 1.0,
   "music_volume": 1.0,
   "x_color": [
-    241,
-    240,
-    173
+    200,
+    40,
+    40
   ],
   "o_color": [
-    0,
-    200,
-    230
+    40,
+    40,
+    200
   ],
+  "x_shape": "X",
+  "o_shape": "O",
   "bg_color": [
-    30,
-    78,
-    0
+    18,
+    18,
+    18
   ],
   "text_color": [
     255,
     255,
     255
   ],
-  "x_wins": 1,
-  "o_wins": 0,
-  "draws": 0
+  "board_size": 3,
+  "x_wins": 8,
+  "o_wins": 11,
+  "draws": 5
 }

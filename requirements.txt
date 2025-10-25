@@ -1,0 +1,5 @@
+pygame
+pytest
+# Pin PyInstaller for deterministic builds in CI. Adjust version if you need a newer release.
+pyinstaller==5.11
+# Add any other runtime/test deps here

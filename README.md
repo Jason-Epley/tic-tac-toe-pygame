@@ -108,10 +108,17 @@ How to Play
   
   After a game ends, you can play again or return to the main menu.
 
-Screenshots attached.
-![image alt](https://github.com/Jason-Epley/tic-tac-toe-pygame/blob/main/tic_tac_toe_pygame_img_3.PNG)
-![image alt](https://github.com/Jason-Epley/tic-tac-toe-pygame/blob/main/tic_tac_toe_pygame_img_2.PNG)
-![image alt](https://github.com/Jason-Epley/tic-tac-toe-pygame/blob/main/tic_tac_toe_pygame_img_1.PNG)
+## Screenshots
+
+### Main Menu
+![Main Menu](tic_tac_toe_pygame_img_1.PNG)
+
+### Gameplay
+![Gameplay](tic_tac_toe_pygame_img_2.PNG)
+
+### Settings Screen
+![Settings](tic_tac_toe_pygame_img_3.PNG)
+
 
 Project Structure
   tic-tac-toe-pygame/

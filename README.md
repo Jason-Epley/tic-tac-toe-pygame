@@ -1,112 +1,95 @@
 # tic-tac-toe-pygame
 Tic-Tac-Toe in Python/Pygame 🎮
 
-Overview
+## Overview
 
-  This is a customized version of Tic-Tac-Toe built in Python with Pygame. Unlike a standard tutorial version, this project includes:
-  
-  A graphical interface with custom design elements
-  
-  Player vs Player and Player vs AI modes
-  
-  Three AI difficulty levels (Easy = random, Medium = smart/random blend, Hard = optimized Minimax with alpha-beta pruning)
-  
-  Two board sizes: Classic 3x3 and Connect 4-style 4x4
-  
-  Undo move system (Ctrl+Z or button) with move history tracking
-  
-  Smooth piece placement animations with visual effects
-  
-  Game timer and move counter display
-  
-  Five quick-apply color themes plus full RGB customization
-  
-  Scoreboard and replay system
-  
-  Sound effects with adjustable volume controls
-  
-  Player name and symbol customization (10 shape options)
-  
-  The game is designed as part of my NCLab Python Capstone Project and demonstrates problem solving, design decisions, and original enhancements beyond the basics.
+This is a customized version of Tic-Tac-Toe built in Python with Pygame. Unlike a standard tutorial version, this project includes:
 
-Features
+- A graphical interface with custom design elements
+- Player vs Player and Player vs AI modes
+- Three AI difficulty levels (Easy = random, Medium = smart/random blend, Hard = optimized Minimax with alpha-beta pruning)
+- Two board sizes: Classic 3x3 and Connect 4-style 4x4
+- Undo move system (Ctrl+Z or button) with move history tracking
+- Smooth piece placement animations with visual effects
+- Game timer and move counter display
+- Five quick-apply color themes plus full RGB customization
+- Scoreboard and replay system
+- Sound effects with adjustable volume controls
+- Player name and symbol customization (5 shape options)
 
-  🖥️ GUI Board with colors and symbols
-  
-  🎮 Two Board Sizes: Classic 3x3 or Connect 4-style 4x4
-  
-  🤖 AI Opponent: choose Easy, Medium, or Hard mode
-    - Easy: Random moves
-    - Medium: 60% smart moves, 40% random (balanced challenge)
-    - Hard: Optimized Minimax with alpha-beta pruning and depth limiting
-  
-  ↩️ Undo System: Press Ctrl+Z or click the Undo button to take back your last move
-  
-  ✨ Smooth Animations: Watch pieces scale up smoothly as they're placed
-  
-  ⏱️ Game Timer & Move Counter: Track your game duration and move count
-  
-  🎨 Theming System:
-    - Five quick-apply themes (Classic Dark, Ocean, Forest, Sunset, Neon)
-    - Full RGB customization for X color, O color, and background
-    - 10 different shape options for each player (X, O, Triangle, Square, etc.)
-  
-  🎵 Sound Effects with adjustable volume controls for music and effects
-  
-  🏆 Scoreboard to track wins, losses, draws
-  
-  🔄 Replay Option without restarting
-  
-  � Visual feedback: Winning line highlight, pulsing effects, hover states
+The game is designed as part of my NCLab Python Capstone Project and demonstrates problem solving, design decisions, and original enhancements beyond the basics.
 
-Installation Requirements
+## Features
 
-  Python 3.9+
-  
-  Pygame library
+- 🖥️ **GUI Board** with colors and symbols
+- 🎮 **Two Board Sizes:** Classic 3x3 or Connect 4-style 4x4
+- 🤖 **AI Opponent:** choose Easy, Medium, or Hard mode
+  - Easy: Random moves
+  - Medium: 60% smart moves, 40% random (balanced challenge)
+  - Hard: Optimized Minimax with alpha-beta pruning and depth limiting
+- ↩️ **Undo System:** Press Ctrl+Z or click the Undo button to take back your last move
+- ✨ **Smooth Animations:** Watch pieces scale up smoothly as they're placed
+- ⏱️ **Game Timer & Move Counter:** Track your game duration and move count
+- 🎨 **Theming System:**
+  - Five quick-apply themes (Classic Dark, Ocean, Forest, Sunset, Neon)
+  - Full RGB customization for Player 1 color, Player 2 color, and background
+  - 5 different shape options for each player (X, O, Square, Triangle, Diamond)
+- 🎵 **Sound Effects** with adjustable volume controls for music and effects
+- 🏆 **Scoreboard** to track wins, losses, draws
+- 🔄 **Replay Option** without restarting
+- ✨ **Visual feedback:** Winning line highlight, pulsing effects, hover states
 
-Setup
+## Installation Requirements
 
-  Clone this repository:
-  
-  git clone https://github.com/Jason-Epley/tic-tac-toe-pygame.git
-  cd tic-tac-toe-pygame
+- Python 3.9+
+- Pygame library
 
+## Setup
 
-Install pygame:
+1. Clone this repository:
 
-  pip install pygame
+```bash
+git clone https://github.com/Jason-Epley/tic-tac-toe-pygame.git
+cd tic-tac-toe-pygame
+```
 
+2. Install pygame:
 
-Run the game:
+```bash
+pip install pygame
+```
 
-  python TicTacToe_Python_Capstone_Project_1.py
+3. Run the game:
 
-How to Play
+```bash
+python TicTacToe_Python_Capstone_Project_1.py
+```
 
-  Launch the game.
-  
-  Choose your game mode from the main menu:
-    - Player vs Player (local multiplayer)
-    - Player vs AI Easy (random moves)
-    - Player vs AI Medium (balanced difficulty)
-    - Player vs AI Hard (challenging minimax AI)
-    - Scores (view win/loss/draw statistics)
-    - Settings (customize colors, sounds, board size, shapes)
-  
-  In Settings, you can:
-    - Toggle between Classic 3x3 and Connect 4-style 4x4 boards
-    - Apply quick themes or customize RGB colors
-    - Adjust sound effects and music volume
-    - Choose player shapes (X, O, Triangle, Square, Plus, Diamond, Star, Heart, Pentagon, Hexagon)
-  
-  During gameplay:
-    - Click an empty square to make your move
-    - Press Ctrl+Z or click the Undo button to take back your last move
-    - Watch the timer and move counter in the top corners
-    - First to 3 in a row (or 4 in a row on 4x4 board) wins
-  
-  After a game ends, you can play again or return to the main menu.
+## How to Play
+
+1. Launch the game.
+
+2. Choose your game mode from the main menu:
+   - Player vs Player (local multiplayer)
+   - Player vs AI Easy (random moves)
+   - Player vs AI Medium (balanced difficulty)
+   - Player vs AI Hard (challenging minimax AI)
+   - How to Play (view instructions)
+   - Settings (customize colors, sounds, board size, shapes)
+
+3. In Settings, you can:
+   - Toggle between Classic 3x3 and Connect 4-style 4x4 boards
+   - Apply quick themes or customize RGB colors
+   - Adjust sound effects and music volume
+   - Choose player shapes (X, O, Square, Triangle, Diamond)
+
+4. During gameplay:
+   - Click an empty square to make your move
+   - Press Ctrl+Z or click the Undo button to take back your last move
+   - Watch the timer and move counter at the top
+   - First to 3 in a row (or 4 in a row on 4x4 board) wins
+
+5. After a game ends, you can play again or return to the main menu.
 
 ## Screenshots
 
@@ -122,125 +105,101 @@ How to Play
 ### Settings Screen
 ![Settings](assets/images/tic_tac_toe_pygame_img_3.PNG)
 
+## Project Structure
 
-Project Structure
-  tic-tac-toe-pygame/
-  │── TicTacToe_Python_Capstone_Project_1.py    # Main game file (all-in-one implementation)
-  │── TicTacToe_Python_Capstone_Project_1.spec  # PyInstaller build specification
-  │── game_utils.py                              # Utility functions (display init, etc.)
-  │── build.ps1                                  # PowerShell build script for packaging
-  │── requirements.txt                           # Python dependencies
-  │── settings.json                              # Saved game settings
-  │── assets/
-  │   └── sounds/                               # Audio files (BGM, SFX)
-  │── tests/                                    # Test files
-  │── tools/                                    # Diagnostic tools
-  │── README.md                                 # Documentation
+```
+tic-tac-toe-pygame/
+├── TicTacToe_Python_Capstone_Project_1.py    # Main game file
+├── TicTacToe_Python_Capstone_Project_1.spec  # PyInstaller spec file
+├── game_utils.py                              # Utility functions
+├── build.ps1                                  # PowerShell build script
+├── requirements.txt                           # Python dependencies
+├── settings.json                              # Saved game settings
+├── assets/
+│   ├── images/                                # Screenshots
+│   └── sounds/                                # Audio files (BGM, SFX)
+└── README.md                                  # Documentation
+```
 
-Key Implemented Features
+## Key Implemented Features
 
-  ✅ Support for 3x3 and 4x4 board sizes
-  
-  ✅ Theming system with 5 pre-made themes and RGB customization
-  
-  ✅ Three AI difficulty levels with optimized algorithms
-  
-  ✅ Undo move system with visual feedback
-  
-  ✅ Smooth animations and visual effects
-  
-  ✅ Game timer and statistics tracking
-  
-  ✅ Comprehensive settings persistence
-  
-  ✅ 10 player shape options
-  
-  Credits
-  
-  Developed by Jason Epley as part of NCLab Python Capstone
-  
-  Built with Python + Pygame
+- ✅ Support for 3x3 and 4x4 board sizes
+- ✅ Theming system with 5 pre-made themes and RGB customization
+- ✅ Three AI difficulty levels with optimized algorithms
+- ✅ Undo move system with visual feedback
+- ✅ Smooth animations and visual effects
+- ✅ Game timer and statistics tracking
+- ✅ Comprehensive settings persistence
+- ✅ 5 player shape options
+- ✅ Fullscreen mode support (F11)
+- ✅ Keyboard shortcuts and tooltips
+- ✅ Confirmation dialogs for destructive actions
+- ✅ "How to Play" instructions screen
 
+## Credits
 
-Development Roadmap for Tic-Tac-Toe (Pygame)
-Phase 1 – Setup & Core Game
+Developed by Jason Epley as part of NCLab Python Capstone
 
-  ✅ Install Python 3.9+ and Pygame.
-  
-  ✅ Create GitHub repo + set up main.py (skeleton we wrote).
-  
-  ✅ Draw board lines using Pygame.
-  
-  ✅ Allow players to place X and O on clicks.
-  
-  ✅ Alternate turns (done in skeleton).
-  
-  Add win detection logic (check rows, columns, diagonals).
-  
-  Display game over message (temporary text in console or on screen).
+Built with Python + Pygame
 
-Phase 2 – Polish Base Game
+## Development Roadmap for Tic-Tac-Toe (Pygame)
 
-  Reset board when a game ends (new round without restarting).
-  
-  Add a scoreboard to track wins, losses, draws.
-  
-  Create a simple menu screen:
-  
-  Choose Player vs Player or Player vs AI.
-  
-  Choose player names/symbols.
+### Phase 1 – Setup & Core Game
 
-Phase 3 – AI Opponent
+- ✅ Install Python 3.9+ and Pygame.
+- ✅ Create GitHub repo + set up main.py (skeleton we wrote).
+- ✅ Draw board lines using Pygame.
+- ✅ Allow players to place X and O on clicks.
+- ✅ Alternate turns (done in skeleton).
+- ✅ Add win detection logic (check rows, columns, diagonals).
+- ✅ Display game over message (temporary text in console or on screen).
 
-  ✅ Implement Easy AI (random move).
-  
-  ✅ Implement Medium AI (60% smart, 40% random for balanced challenge).
-  
-  ✅ Implement Hard AI (Minimax algorithm with alpha-beta pruning and depth limiting).
-  
-  ✅ Add option in menu to pick Easy/Medium/Hard AI.
+### Phase 2 – Polish Base Game
 
-Phase 4 – User Experience Enhancements
+- ✅ Reset board when a game ends (new round without restarting).
+- ✅ Add a scoreboard to track wins, losses, draws.
+- ✅ Create a simple menu screen:
+  - Choose Player vs Player or Player vs AI.
+  - Choose player names/symbols.
 
-  ✅ Add colors/graphics customization (10 shape options, 5 themes, full RGB control).
-  
-  ✅ Highlight the winning line when someone wins with pulsing animation.
-  
-  ✅ Add sound effects (move, AI move, win, lose, draw, menu sounds) with volume controls.
-  
-  ✅ Smooth animations (scale-up piece placement, visual effects).
-  
-  ✅ Add undo move system (Ctrl+Z and button).
-  
-  ✅ Add game timer and move counter display.
+### Phase 3 – AI Opponent
 
-Phase 5 – Final Touches
+- ✅ Implement Easy AI (random move).
+- ✅ Implement Medium AI (60% smart, 40% random for balanced challenge).
+- ✅ Implement Hard AI (Minimax algorithm with alpha-beta pruning and depth limiting).
+- ✅ Add option in menu to pick Easy/Medium/Hard AI.
 
-  Add replay button (instead of restart).
-  
-  Update README.md with screenshots and instructions.
-  
-  Record presentation demo.
-  
-  Push final version to GitHub with tags/releases.
+### Phase 4 – User Experience Enhancements
 
+- ✅ Add colors/graphics customization (5 shape options, 5 themes, full RGB control).
+- ✅ Highlight the winning line when someone wins with pulsing animation.
+- ✅ Add sound effects (move, AI move, win, lose, draw, menu sounds) with volume controls.
+- ✅ Smooth animations (scale-up piece placement, visual effects).
+- ✅ Add undo move system (Ctrl+Z and button).
+- ✅ Add game timer and move counter display.
 
-Music Credits
-⦁	"Background Music" bgm.ogg = chill background music #2.wav by ZHRØ -- https://freesound.org/s/703713/ -- License: Attribution 4.0
-⦁	"Menu click" menu_select.wav = Click - Wooden 2 by GameAudio -- https://freesound.org/s/220196/ -- License: Creative Commons 0
-⦁	"Lose sound" lose.wav = Jingle_Lose_01.wav by LittleRobotSoundFactory -- https://freesound.org/s/270334/ -- License: Attribution 4.0
-⦁	"Draw sound" draw.wav = Retro You Lose SFX  by suntemple -- https://freesound.org/s/253174/ -- License: Creative Commons 0
-⦁	"Win sound" win.wav = Electro success sound by Unlistenable -- https://freesound.org/s/391540/ -- License: Attribution NonCommercial 4.0
-⦁	"AI move sound" move_ai.wav = Electro success sound by Unlistenable -- https://freesound.org/s/391540/ -- License: Attribution NonCommercial 4.0
-⦁	"Move sound" move.wav = Click_1.wav by JonnyRuss01 -- https://freesound.org/s/478197/ -- License: Creative Commons 0
+### Phase 5 – Final Touches
 
-Build & Packaging
-------------------
+- ✅ Add replay button (instead of restart).
+- ✅ Update README.md with screenshots and instructions.
+- Record presentation demo.
+- Push final version to GitHub with tags/releases.
 
-If you want to distribute the game to other users (Windows EXE), PyInstaller is the simplest option. The repository includes a spec file `TicTacToe_Python_Capstone_Project_1.spec` that bundles the `assets/` folder so sounds and other resources are available at runtime.
+## Music Credits
 
-Recommended steps (Windows PowerShell):
+- **Background Music** `bgm.ogg` = chill background music #2.wav by ZHRØ -- [Freesound](https://freesound.org/s/703713/) -- License: Attribution 4.0
+- **Menu click** `menu_select.wav` = Click - Wooden 2 by GameAudio -- [Freesound](https://freesound.org/s/220196/) -- License: Creative Commons 0
+- **Lose sound** `lose.wav` = Jingle_Lose_01.wav by LittleRobotSoundFactory -- [Freesound](https://freesound.org/s/270334/) -- License: Attribution 4.0
+- **Draw sound** `draw.wav` = Retro You Lose SFX by suntemple -- [Freesound](https://freesound.org/s/253174/) -- License: Creative Commons 0
+- **Win sound** `win.wav` = Electro success sound by Unlistenable -- [Freesound](https://freesound.org/s/391540/) -- License: Attribution NonCommercial 4.0
+- **AI move sound** `move_ai.wav` = Electro success sound by Unlistenable -- [Freesound](https://freesound.org/s/391540/) -- License: Attribution NonCommercial 4.0
+- **Move sound** `move.wav` = Click_1.wav by JonnyRuss01 -- [Freesound](https://freesound.org/s/478197/) -- License: Creative Commons 0
+
+## Build & Packaging
+
+If you want to distribute the game to other users (Windows EXE), PyInstaller is the simplest option. The repository includes a spec file (`TicTacToe_Python_Capstone_Project_1.spec`) that bundles the `assets/` folder so sounds and other resources are available at runtime.
+
+### Recommended steps (Windows PowerShell):
 
 1. Install PyInstaller:
 
@@ -263,19 +222,26 @@ This creates `dist\TicTacToe_Python_Capstone_Project_1\` containing the executab
 pyinstaller TicTacToe_Python_Capstone_Project_1.spec
 ```
 
-Notes & tips
+### Notes & Tips
+
 - The app includes a `resource_path()` helper so asset lookup works when running from source, `--onedir` builds, or `--onefile` bundles (PyInstaller extracts files to a temp folder). If you change asset layout, update `resource_path` usage accordingly.
 - For best portability, ship `bgm.ogg` (OGG is broadly supported). MP3 support depends on SDL_mixer build on some platforms.
 - Single-file builds (`--onefile`) are possible but will extract assets to a temp folder at runtime and can increase startup time. Use `--onedir` for simpler distribution.
 - To produce an installer (optional), package the `dist\TicTacToe_Python_Capstone_Project_1` folder with an installer builder (Inno Setup, NSIS) or zip it for users.
 
-If you'd like, I can add a small `build.ps1` script that runs the pyinstaller command and packages the output into a zip for distribution.
+### Build Helper Script
 
-## Verification
+The repository includes a `build.ps1` PowerShell script that automates the build process and creates a timestamped ZIP file:
+
+```powershell
+.\build.ps1
+```
+
+### Verification
 
 After building, verify the distribution on a clean machine or VM to ensure assets (sounds) and music codecs load correctly.
 
-Minimal manual test checklist:
+**Minimal manual test checklist:**
 
 - Unzip or copy the contents of the build folder (from `dist/`) to the test machine.
 - Run the executable inside the folder (Windows: the .exe in the folder). The game should open a window.
@@ -285,14 +251,7 @@ Minimal manual test checklist:
   - If music doesn't start, the top-right of Settings will show a small notice indicating bgm is missing or unavailable.
 - Start a game and ensure move sounds and win/draw/lose sounds play when appropriate.
 
-If you prefer an automated helper, run the included PowerShell helper from the repo root to build & ZIP the output:
-
-  .\build.ps1
-
-This will build using the spec (if present) or run a one-folder build and create a timestamped zip file you can transfer to a test VM.
-
-Headless CI / running tests in CI
---------------------------------
+## Headless CI / Running Tests in CI *(Optional - For Future Development)*
 
 When running automated tests or importing the module in headless CI runners, Pygame may fail to create a display/renderer. To run Pygame in headless mode set the SDL_VIDEODRIVER environment variable to "dummy" before importing or running Pygame code. Example (GitHub Actions):
 

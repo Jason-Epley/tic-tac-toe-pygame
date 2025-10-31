@@ -6,14 +6,16 @@ Features:
 - Two board sizes: Classic 3x3 and Connect 4-style 4x4
 - Three AI difficulty levels: Easy (random), Medium (balanced), Hard (optimized minimax)
 - Player vs Player and Player vs AI modes
-- Undo move system with move history
-- Smooth animations
+- Undo move system with move history (Ctrl+Z)
+- Smooth animations and visual effects
 - Game timer and move counter
 - Five color themes + full RGB customization
-- Ten player shapes (X, O, Triangle, Square, Plus, Diamond, Star, Heart, Pentagon, Hexagon)
-- Sound effects with volume controls
+- Five player shapes (X, O, Triangle, Square, Diamond)
+- Sound effects with adjustable volume controls
 - Settings saved automatically
 - Scoreboard tracking
+- Fullscreen mode (F11)
+- Keyboard shortcuts and tooltips
 
 Requirements: Python 3.8+, pygame
 Sound files optional (assets/sounds). settings.json auto-created.
@@ -40,6 +42,57 @@ from game_utils import has_unsaved_shape_changes
 # -------------------------
 VERSION = "1.0"
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# -------------------------
+# Game messages (varied for engagement)
+# -------------------------
+WIN_MESSAGES_PVP = [
+    "Player {player} Wins!",
+    "Victory for Player {player}!",
+    "{player} is the Champion!",
+    "Player {player} Triumphs!",
+    "Congratulations, Player {player}!",
+]
+
+WIN_MESSAGES_VS_AI = [
+    "You Win! Excellent Strategy!",
+    "Victory! You Defeated the AI!",
+    "Congratulations! You're the Winner!",
+    "You Win! Outstanding Play!",
+    "Success! The AI is Defeated!",
+]
+
+LOSE_MESSAGES_VS_AI = [
+    "AI Wins! Better Luck Next Time!",
+    "The AI Prevails! Try Again?",
+    "AI Victory! You'll Get It Next Time!",
+    "AI Wins This Round!",
+    "The Computer Outsmarted You!",
+]
+
+DRAW_MESSAGES = [
+    "It's a Draw! Well Played!",
+    "Stalemate! Both Players Fought Well!",
+    "A Tie! Perfectly Matched!",
+    "Draw! Nobody Wins This Round!",
+    "Even Match! No Winner This Time!",
+]
+
+def get_win_message(player, game_mode):
+    """Get a varied win message based on game mode and player."""
+    if game_mode == "PVP":
+        msg = random.choice(WIN_MESSAGES_PVP)
+        return msg.format(player=player)
+    else:
+        # AI modes
+        if player == "X":  # Human player
+            return random.choice(WIN_MESSAGES_VS_AI)
+        else:  # AI player
+            return random.choice(LOSE_MESSAGES_VS_AI)
+
+def get_draw_message():
+    """Get a varied draw message."""
+    return random.choice(DRAW_MESSAGES)
 
 def resource_path(*parts):
     """Get file path that works in both source and PyInstaller exe.
@@ -220,14 +273,9 @@ def set_game_size(n: int):
     except Exception:
         # if display re-init fails, keep the new board we just created
         pass
-    # return to the menu to allow user to start a game with the new size
-    # If running in headless/test mode (SDL_VIDEODRIVER=dummy), don't enter
-    # the interactive menu loop because tests call set_game_size() directly.
-    try:
-        if os.environ.get('SDL_VIDEODRIVER', '').lower() != 'dummy':
-            reset_board()
-    except Exception:
-        pass
+    # Note: We no longer automatically return to the menu when changing board size.
+    # This allows the settings screen to change board size without navigation issues.
+    # The board will be properly initialized when starting a new game.
 
 # Display helpers: allow resize and fullscreen toggling
 fullscreen = False
@@ -3740,10 +3788,12 @@ def play_one_game():
                                 draw_winning_line(win_cells); draw_pulsing_circles(win_cells)
                                 handle_win(player)
                                 draw_lines(); draw_figures(); display_scoreboard(); present()
-                                save_settings(); return end_screen_loop(f"Player {player} Wins!")
+                                pygame.time.delay(600)  # Brief celebratory pause
+                                save_settings(); return end_screen_loop(get_win_message(player, game_mode))
                             elif is_board_full():
                                 handle_draw(); draw_lines(); draw_figures(); display_scoreboard(); present()
-                                save_settings(); return end_screen_loop("It's a Draw!")
+                                pygame.time.delay(400)  # Brief pause for draw
+                                save_settings(); return end_screen_loop(get_draw_message())
                             else:
                                 player = "O" if player == "X" else "X"
                     elif game_mode in ("AI_EASY", "AI_MEDIUM", "AI_HARD"):
@@ -3755,10 +3805,12 @@ def play_one_game():
                                 draw_winning_line(win_cells); draw_pulsing_circles(win_cells)
                                 handle_win("X")
                                 draw_lines(); draw_figures(); display_scoreboard(); present()
-                                save_settings(); return end_screen_loop("Player 1 Wins!")
+                                pygame.time.delay(600)  # Brief celebratory pause
+                                save_settings(); return end_screen_loop(get_win_message("X", game_mode))
                             elif is_board_full():
                                 handle_draw(); draw_lines(); draw_figures(); display_scoreboard(); present()
-                                save_settings(); return end_screen_loop("It's a Draw!")
+                                pygame.time.delay(400)  # Brief pause for draw
+                                save_settings(); return end_screen_loop(get_draw_message())
                             # AI turn
                             if game_mode == "AI_EASY":
                                 ai_move_easy()
@@ -3803,10 +3855,12 @@ def play_one_game():
                                 draw_winning_line(win_cells); draw_pulsing_circles(win_cells)
                                 handle_win("O")
                                 draw_lines(); draw_figures(); display_scoreboard(); present()
-                                save_settings(); return end_screen_loop("Player 2 Wins!")
+                                pygame.time.delay(600)  # Brief pause to show AI victory
+                                save_settings(); return end_screen_loop(get_win_message("O", game_mode))
                             elif is_board_full():
                                 handle_draw(); draw_lines(); draw_figures(); display_scoreboard(); present()
-                                save_settings(); return end_screen_loop("It's a Draw!")
+                                pygame.time.delay(400)  # Brief pause for draw
+                                save_settings(); return end_screen_loop(get_draw_message())
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_F11:
                     toggle_fullscreen()
@@ -3836,6 +3890,8 @@ def play_one_game():
 # -------------------------
 def display_end_options(message):
     screen.fill(END_BG)
+    
+    # Display message with slight animation on first frame
     result = FONT_LARGE.render(message, True, TEXT_COLOR)
     screen.blit(result, (WIDTH//2 - result.get_width()//2, HEIGHT//2 - 120))
     
@@ -3843,27 +3899,39 @@ def display_end_options(message):
     mouse_pos = map_mouse_pos(pygame.mouse.get_pos())
     hand_cursor = False
     
-    # clickable buttons
-    restart_rect = pygame.Rect(WIDTH//2 - 220, HEIGHT//2 - 20, 200, 64)
-    menu_rect = pygame.Rect(WIDTH//2 + 20, HEIGHT//2 - 20, 200, 64)
+    # Base button positions
+    base_restart = pygame.Rect(WIDTH//2 - 220, HEIGHT//2 - 20, 200, 64)
+    base_menu = pygame.Rect(WIDTH//2 + 20, HEIGHT//2 - 20, 200, 64)
     
-    # Draw buttons with hover effects
-    pygame.draw.rect(screen, (60,180,60), restart_rect, border_radius=8)
-    # Yellow border on hover for restart button
-    if restart_rect.collidepoint(mouse_pos):
-        pygame.draw.rect(screen, (255,220,40), restart_rect, 3, border_radius=8)
+    # Apply subtle scale effect on hover
+    restart_rect = base_restart.copy()
+    menu_rect = base_menu.copy()
+    
+    if base_restart.collidepoint(mouse_pos):
+        # Slightly enlarge on hover
+        restart_rect.inflate_ip(6, 4)
         hand_cursor = True
+    
+    if base_menu.collidepoint(mouse_pos):
+        # Slightly enlarge on hover
+        menu_rect.inflate_ip(6, 4)
+        hand_cursor = True
+    
+    # Draw restart button
+    pygame.draw.rect(screen, (60,180,60), restart_rect, border_radius=8)
+    if base_restart.collidepoint(mouse_pos):
+        pygame.draw.rect(screen, (255,220,40), restart_rect, 4, border_radius=8)
     else:
         pygame.draw.rect(screen, (255,255,255), restart_rect, 2, border_radius=8)
     
+    # Draw menu button
     pygame.draw.rect(screen, (180,60,60), menu_rect, border_radius=8)
-    # Yellow border on hover for menu button
-    if menu_rect.collidepoint(mouse_pos):
-        pygame.draw.rect(screen, (255,220,40), menu_rect, 3, border_radius=8)
-        hand_cursor = True
+    if base_menu.collidepoint(mouse_pos):
+        pygame.draw.rect(screen, (255,220,40), menu_rect, 4, border_radius=8)
     else:
         pygame.draw.rect(screen, (255,255,255), menu_rect, 2, border_radius=8)
     
+    # Draw button labels
     draw_text_center("Restart", FONT_MED, (255,255,255), screen, restart_rect.centerx, restart_rect.centery)
     draw_text_center("Menu", FONT_MED, (255,255,255), screen, menu_rect.centerx, menu_rect.centery)
     
@@ -3878,7 +3946,7 @@ def display_end_options(message):
         pass
     
     present()
-    return restart_rect, menu_rect
+    return base_restart, base_menu  # Return base rects for collision detection
 
 def end_screen_loop(message):
     global game_mode, running
